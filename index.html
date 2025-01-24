@@ -1,80 +1,243 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<title>Touch By Xlamper</title>
-<link rel="icon" type="image/x-icon" href="https://a.top4top.io/p_3180vdmrs0.gif">
-<meta content='Xlamper' name='Description'/>
-<meta content=':)' name='keywords'/>
-<meta content=':?' name='Abstract'/>
-<meta name="title" content="Touch By Xlamper"/>
-<meta name="description" content=":)"/>
-<meta name="keywords" content="Xlamper"/>
-<meta name="googlebot" content="index,follow"/>
-<meta name="robots" content="all"/>
-<meta name="robots schedule" content="auto"/>
-<meta name="distribution" content="global"/>
-<meta contact='#'/> <meta charset="utf-8">
-<style>
-html, body {
-    color: #FFFFFF;
-    font-family: 'Fredericka the Great', sans-serif;
-    font-weight: 100;
-    height: 100vh;
-    margin: 0;
-}
-.full-height {
-    height: 100vh; 
-} 
-
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.position-ref { 
-    position: relative; 
-}
-.content {
-    text-align: center;
-}
-.title {
-    font-size: 36px;
-    padding: 20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Service</title>
+    <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0533/2089/files/roboto.css?9715355625480695887">
+    <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0533/2089/files/animate.min.css?12530750748070383947">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .header {
+            background-color: #c0392b; /* Slightly higher red */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            height: 50px; /* Adjust based on content */
+        }
+        .header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 2em; /* Larger text size */
+            white-space: nowrap;
+            position: absolute;
+            width: 100%;
+            animation: marquee 10s linear infinite;
+        }
+        .header .neon-text {
+            font-size: 1.8em; /* Adjust size to align with header text */
+            color: #fff; /* White color */
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+            position: absolute;
+            bottom: 20px; /* Adjust to align vertically */
+            left: 50%;
+            transform: translateX(-50%);
+            animation: neonGlow 1.5s infinite alternate, flicker 3s infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff;
+            }
+        }
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('animated-background.gif') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 0;
+            animation: moveBackground 20s linear infinite;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+        .container {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-item {
+            background: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 40px);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            animation: bounceIn 1s;
+        }
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .game-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .game-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .game-item h2 {
+            margin: 10px 0;
+            color: #ecf0f1;
+        }
+        .game-item p {
+            font-size: 0.9em;
+        }
+        .footer {
+            background-color: #34495e;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .navbar {
+            background: #e74c3c; /* Navigation bar color */
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #c0392b;
+        }
+        .animated-blog-bg {
+            background: #e74c3c; /* Red background color */
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            color: #fff;
+        }
+    </style>
 </head>
-<body align="center" oncontextmenu="return false" bgcolor="ffffff">
-<div class="stars">
-<div class="twinkling">
-<div class="flex-center position-ref full-height">
-<div class="content">                                                                                                                  
-<div class="text">
-<font color="#00000">
-    <img src="https://c.top4top.io/p_3188tmbo40.gif" height="300">
-    <br/>
-    <br/>
-    <b><i>
-    <font size="7"><code> Touch By Xlamper</code></font>
-    <br/>
-    <br/>
-    <font size="5"><code>Sorry :(</code><br><br>
-    <font size="3"><code>TOUCH TO PLAY MUSIC</code>
+<body>
+    <div class="header">
+        <h1>Lucky Stresser | Bot Telegram | Bot Plans C2</h1>
     </div>
-    <div class="content">
-        <div class="text">
-              <source src="https://h.top4top.io/m_31892k8kx0.mp3" type="audio/mp3">
-
-</audio> 
-</div>
-  <audio src="https://h.top4top.io/m_31892k8kx0.mp3" autoplay controls></audio>
-<div class="footer-greetings"> 
-  <audio autoplay>
-  </audio>
-    
-
-  </script>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="game-list">
+            <div class="game-item animate__animated animate__fadeIn">
+                <!-- Ganti URL gambar di sini -->
+                <img src="https://b.top4top.io/p_3311qe9ho0.jpg" alt="Acces From Telegram Bot">
+                <h2>Bot Plans C2 Weekly Plan</h2>
+                <p>BASIC = IDR 100.000</p>
+                <p>VIP = IDR 150.000</p>
+                <a href="https://t.me/Xlamper2" class="button">Buy Now</a>
+            </div>
+            <div class="game-item animate__animated animate__fadeIn">
+                <!-- Ganti URL gambar di sini -->
+                <img src="https://b.top4top.io/p_3311qe9ho0.jpg" alt="Access From Telegram Bot">
+                <h2>Bot Plans C2 1 Month</h2>
+                <p>Basic = IDR 200.000</p>
+                <p>VIP = IDR 300.000</p>
+                <a href="https://t.me/Xlamper2" class="button">Buy Now</a>
+            </div>
+            <!-- Added new blog sections -->
+            <div class="game-item animate__animated animate__fadeIn">
+                                <!-- Ganti URL gambar di sini -->
+                <img src="https://b.top4top.io/p_3311qe9ho0.jpg" alt="Plan Mingguan">
+                <h2>Topping</h2>
+                <p>+1 Concurrents = IDR 10.000 | $10</p>
+                <p>+300 Timelimit = IDR 150.000 | $10</p>
+                <p>+Lifetime = IDR 1.500.000 | $150</p>
+                <a href="https://t.me/Xlamper2" class="button">Buy Now</a>
+            </div>
+        </div>
     </div>
-    </div></b></i> 
-
-  </script>
+    <div class="footer">
+        <p>&copy; 2025 Lucky Stresser © Xlamper</p>
+    </div>
 </body>
-</head>
+</html>
+
+            </div>
